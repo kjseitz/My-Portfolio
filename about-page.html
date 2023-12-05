@@ -68,16 +68,16 @@
         my life and its made me want to be a better person for them.
       </p>
     </div>
-    <div class="container text-center">
+    <div>
       <img class="mySlides text-center" src="/images/family1.jpeg">
+      <img class="mySlides text-center" src="/images/mom.jpeg">
       <img class="mySlides text-center" src="/images/family2.jpeg">
+      <img class="mySlides text-center" src="/images/mom2.jpeg">
       <img class="mySlides text-center" src="/images/family3.jpeg">
+      <img class="mySlides text-center" src="/images/mom3.jpeg">
       <img class="mySlides text-center" src="/images/family4.jpeg">
-      <img class="mySlides text-center" src="/images/family5.jpeg">
       <img class="mySlides text-center" src="/images/family 6.jpeg">
-      <img class="mySlides text-center" src="/images/bella.jpeg">
-      <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-      <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+      <br />
     </div>
     <div class="container">
       <h2 class="fw-bold">One Word</h2>
@@ -153,22 +153,19 @@
       crossorigin="anonymous"
     ></script>
     <script> 
-    var slideIndex = 1;
-showDivs(slideIndex);
+var slideIndex = 0;
+carousel();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
+function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
   x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
 }
     </script>
     
